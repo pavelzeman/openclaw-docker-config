@@ -27,7 +27,8 @@ echo "    Image: $GW_IMAGE"
 echo "    Tags:  $TAG, $SHA"
 echo ""
 
-docker buildx build --platform linux/amd64 -f "$REPO_ROOT/docker/Dockerfile" -t "$GW_IMAGE:$TAG" -t "$GW_IMAGE:$SHA" --push "$REPO_ROOT"
+# docker buildx build --platform linux/amd64 -f "$REPO_ROOT/docker/Dockerfile" -t "$GW_IMAGE:$TAG" -t "$GW_IMAGE:$SHA" --push "$REPO_ROOT"
+docker-buildx build --platform linux/amd64 -f "$REPO_ROOT/docker/Dockerfile" -t "$GW_IMAGE:$TAG" -t "$GW_IMAGE:$SHA" --push "$REPO_ROOT"
 
 echo ""
 echo "✓ Built and pushed $GW_IMAGE:$TAG (linux/amd64)"
